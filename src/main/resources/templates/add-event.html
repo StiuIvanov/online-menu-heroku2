@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header>
+    <nav th:replace="fragments/commons::navMenu"></nav>
+</header>
+<div id="page-container">
+    <div id="content-wrap">
+        <main>
+            <h1 class="text-center mt-2 badge-dark"><span class="myLinkList badge-pill">Add event</span></h1>
+            <hr class="hr-3 w-25 bg-white"/>
+            <h4>1. Only image address</h4>
+            <h4>2. Image address + event link</h4>
+            <h4>3. Only Embedded link</h4>
+            <form class="mx-auto w-100" th:action="@{/admin/add-event}" th:method="post"
+                  th:object="${eventBindingModel}">
+                <div class="form-group p-1">
+                    <label for="linkImage" class="h3 mb-2">Image address</label>
+                    <textarea class="form-control " id="linkImage" name="linkImage"></textarea>
+                </div>
+                <div class="form-group p-1">
+                    <label for="linkEvent" class="h3 mb-2">Event link</label>
+                    <textarea class="form-control " id="linkEvent" name="linkEvent"></textarea>
+                </div>
+                <div class="form-group p-1">
+                    <h1 class="text-center ">Or</h1>
+                    <h1 class="text-center ">Embedded link</h1>
+                    <textarea class="form-control " id="embeddedLink" name="embeddedLink"></textarea>
+                </div>
+                <div class="button-holder d-flex justify-content-center ">
+                    <button type="submit" class="btn btn-dark  mb-3 mt-3">Submit</button>
+                </div>
+            </form>
+
+        </main>
+    </div>
+</div>
+<footer th:replace="fragments/commons::footer"></footer>
+<script th:replace="fragments/commons::bsbundle"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header>
+    <nav th:replace="fragments/commons::navMenu"></nav>
+</header>
+<div id="page-container">
+        <main>
+            <br>
+            <th:block id="special" th:if="${special != null}">
+                <h3 class="text-center">Special:</h3>
+                <h5 class="card-title text-center" th:text="${special.getName()}">Specialty name</h5>
+                <form sec:authorize="isAuthenticated()" class="text-center " th:action="@{/admin/delete-specialty}"
+                      th:method="post">
+                    <button type="submit" class="btn btn-danger  mb-3 mt-3">Delete speciality</button>
+                </form>
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top myImageBorder" th:src="${special.getPicture().getUrl()}"
+                         alt="Card image cap">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="${special.getDescription()}">Description</p>
+                        <p class="card-text" th:if="${special.getPrice()!=null}"
+                           th:text="|${#numbers.formatDecimal(special.getPrice(), 1,2)}лв.|">Price</p>
+                    </div>
+                </div>
+            </th:block>
+
+            <th:block id="event" th:if="${event != null }">
+                <h3 class="text-center myLinkList">Today's Event</h3>
+                <form sec:authorize="isAuthenticated()" class="text-center " th:action="@{/admin/delete-event}"
+                      th:method="post">
+                    <button type="submit" class="btn btn-danger  mb-3 mt-3">Delete event</button>
+                </form>
+                <a th:if="${event.getEmbeddedLink()==null}" th:href="${event.getLinkEvent()}"><img
+                        th:src="${event.getLinkImage()}" width="100%" height="100%"></a>
+                <th:block th:if="${event.getEmbeddedLink()!=null}" th:utext="${event.getEmbeddedLink()}"></th:block>
+                <br><br>
+            </th:block>
+
+            <ul class="text-center list-group list-group-flush myLinkList">
+                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/full-menu}">Full Menu</a></li>
+                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/alcohol-menu}">Alcohol</a>
+                </li>
+                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/food}">Food</a></li>
+                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/non-alcoholic}">Non
+                    Alcoholic</a></li>
+            </ul>
+        </main>
+
+</div>
+<footer th:include="fragments/commons::footer"></footer>
+<script th:replace="fragments/commons::bsbundle"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"
+        nonce="UWP2Mmb7">
+</script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
+<!--<head th:replace="fragments/commons::head"></head>-->
+<!--<body>-->
+<!--<header>-->
+
+<!--    <nav th:replace="fragments/commons::navMenu"></nav>-->
+<!--</header>-->
+<!--<div id="page-container">-->
+<!--    <div id="content-wrap">-->
+<!--        <main>-->
+<!--            <br>-->
+<!--            <th:block id="special" th:if="${special != null}">-->
+<!--                <h3 class="text-center">Special:</h3>-->
+<!--                <h5 class="card-title text-center" th:text="${special.getName()}">Specialty name</h5>-->
+<!--                <form sec:authorize="isAuthenticated()" class="text-center " th:action="@{/admin/delete-specialty}"-->
+<!--                      th:method="post">-->
+<!--                    <button type="submit" class="btn btn-danger  mb-3 mt-3">Delete specialty</button>-->
+<!--                </form>-->
+<!--                <div class="card" style="width: 100%;">-->
+<!--                    <img class="card-img-top myImageBorder" th:src="${special.getPicture().getUrl()}"-->
+<!--                         alt="Card image cap">-->
+<!--                    <div class="card-body text-center">-->
+<!--                        <p class="card-text" th:text="${special.getDescription()}">Description</p>-->
+<!--                        <p class="card-text" th:if="${special.getPrice()!=null}"-->
+<!--                           th:text="|${#numbers.formatDecimal(special.getPrice(), 1,2)}лв.|">Price</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </th:block>-->
+
+<!--            <th:block id="event" th:if="${event != null }">-->
+<!--                <h3 class="text-center">Today's Event</h3>-->
+<!--                <form sec:authorize="isAuthenticated()" class="text-center " th:action="@{/admin/delete-event}"-->
+<!--                      th:method="post">-->
+<!--                    <button type="submit" class="btn btn-danger  mb-3 mt-3">Delete event</button>-->
+<!--                </form>-->
+<!--                <a th:if="${event.getEmbeddedLink()==null}" th:href="${event.getLinkEvent()}"><img-->
+<!--                        th:src="${event.getLinkImage()}" width="100%" height="100%"></a>-->
+<!--                <th:block th:if="${event.getEmbeddedLink()!=null}" th:utext="${event.getEmbeddedLink()}"></th:block>-->
+<!--                <br><br>-->
+<!--            </th:block>-->
+
+<!--            <ul class="text-center list-group list-group-flush">-->
+<!--                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/full-menu}">Full Menu</a></li>-->
+<!--                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/alcohol-menu}">Alcohol</a>-->
+<!--                </li>-->
+<!--                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/food}">Food</a></li>-->
+<!--                <li class="list-group-item"><a class="text-center myLinkList" th:href="@{/non-alcoholic}">Non-->
+<!--                    Alcoholic</a></li>-->
+<!--            </ul>-->
+
+
+<!--        </main>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<footer th:replace="fragments/commons::footer"></footer>-->
+<!--<script th:replace="fragments/commons::bsbundle"></script>-->
+<!--<div id="fb-root"></div>-->
+<!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"-->
+<!--        nonce="UWP2Mmb7">-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
