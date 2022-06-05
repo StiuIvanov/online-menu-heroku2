@@ -39,5 +39,10 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public boolean isEmpty() {
+        return userRepository.count()==0;
+    }
+
 
 }

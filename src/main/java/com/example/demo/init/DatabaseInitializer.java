@@ -21,30 +21,32 @@ public class DatabaseInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        userService.initAdmin();
+        if (userService.isEmpty()) {
+            userService.initAdmin();
 
-        productService.initWhiskeys();
-        productService.initGin();
-        productService.initVodka();
-        productService.initCognacAndBrendy();
-        productService.initRum();
-        productService.initTequila();
-        productService.initRakia();
-        productService.initWhiskeyCocktails();
-        productService.initGinCocktails();
-        productService.initVodkaCocktails();
-        productService.initTequilaCocktails();
-        productService.initBrandyCocktails();
-        productService.initSchroedingerCocktails();
-        productService.initBeer();
-        productService.initWineGlass();
-        productService.intWineGlass();
-        productService.initRedWine();
-        productService.initRose();
-        productService.initNonAlcoholic();
-        productService.initHotBeverages();
-        productService.initNuts();
-        productService.initMenu();
+            productService.initWhiskeys();
+            productService.initGin();
+            productService.initVodka();
+            productService.initCognacAndBrendy();
+            productService.initRum();
+            productService.initTequila();
+            productService.initRakia();
+            productService.initWhiskeyCocktails();
+            productService.initGinCocktails();
+            productService.initVodkaCocktails();
+            productService.initTequilaCocktails();
+            productService.initBrandyCocktails();
+            productService.initSchroedingerCocktails();
+            productService.initBeer();
+            productService.initWineGlass();
+            productService.intWineGlass();
+            productService.initRedWine();
+            productService.initRose();
+            productService.initNonAlcoholic();
+            productService.initHotBeverages();
+            productService.initNuts();
+            productService.initMenu();
+        }
     }
 
 
