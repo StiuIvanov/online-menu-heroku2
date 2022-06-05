@@ -11,7 +11,7 @@
         <main>
             <br>
             <th:block id="special" th:if="${special != null}">
-                <h3 class="text-center">Special:</h3>
+                <h3 class="text-center myLinkList">Special:</h3>
                 <h5 class="card-title text-center" th:text="${special.getName()}">Specialty name</h5>
                 <form sec:authorize="isAuthenticated()" class="text-center " th:action="@{/admin/delete-specialty}"
                       th:method="post">
