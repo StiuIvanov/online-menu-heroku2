@@ -18,6 +18,7 @@ public class CloudinaryImage {
 
 
         this.url = url;
+
         return this;
     }
 
