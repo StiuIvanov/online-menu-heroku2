@@ -13,6 +13,10 @@ public class CloudinaryImage {
 
     public CloudinaryImage setUrl(String url) {
 
+
+
+
+
         this.url = url;
         return this;
     }
