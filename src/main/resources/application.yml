@@ -11,7 +11,7 @@ spring:
     username: ${JDBC_DATABASE_USERNAME:}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     open-in-view: false
     properties:
       hibernate:
