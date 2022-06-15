@@ -39,7 +39,7 @@ public class DatabaseInitializer implements CommandLineRunner {
             productService.initSchroedingerCocktails();
             productService.initBeer();
             productService.initWineGlass();
-            productService.intWineGlass();
+            productService.initWhiteWine();
             productService.initRedWine();
             productService.initRose();
             productService.initNonAlcoholic();

@@ -65,7 +65,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void initCognacAndBrendy() {
-        ProductEntity ararat = new ProductEntity().setName("Brandy Ararat 5YO Armenia").setPrice(6.0).setType(TypeEnum.CognacAndBrendy);
+        ProductEntity ararat = new ProductEntity().setName("Brandy Ararat 7YO Armenia").setPrice(8.0).setType(TypeEnum.CognacAndBrendy);
         ProductEntity saraji = new ProductEntity().setName("Brandy Sarajishvili VS, Georgia").setPrice(8.0).setType(TypeEnum.CognacAndBrendy);
         ProductEntity martell_vs_single_distillery_france = new ProductEntity().setName("Martell VS Single Distillery France").setPrice(10.00).setType(TypeEnum.CognacAndBrendy);
 
@@ -124,7 +124,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void initGinCocktails() {
         ProductEntity gin_tonic = new ProductEntity().setName("Gin Tonic").setPrice(10.00).setType(TypeEnum.GinCocktails);
-        ProductEntity gin_tonic_vs = new ProductEntity().setName("Gin Tonic VS").setPrice(14.00).setType(TypeEnum.GinCocktails);
+        ProductEntity gin_tonic_vs = new ProductEntity().setName("Gin Tonic VS").setPrice(15.00).setType(TypeEnum.GinCocktails);
         ProductEntity martini = new ProductEntity().setName("Martini").setPrice(12.00).setType(TypeEnum.GinCocktails);
 
         productRepository.save(gin_tonic);
@@ -172,9 +172,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void initBeer() {
-        ProductEntity smallDraft = new ProductEntity().setName("Малка Наливна Бира / Small Draft Beer 0.30л.").setPrice(4.00).setType(TypeEnum.Beer);
-        ProductEntity largeDraft = new ProductEntity().setName("Голяма Наливна Бира / Large Draft Beer 0.50л.").setPrice(6.00).setType(TypeEnum.Beer);
-        ProductEntity birichka = new ProductEntity().setName("Биричка 10' / Birichka Beer 10' 0.33л.").setPrice(3.50).setType(TypeEnum.Beer);
+        ProductEntity smallDraft = new ProductEntity().setName("Наливна Бира Витошко Лале малка").setPrice(3.50).setType(TypeEnum.Beer);
+        ProductEntity largeDraft = new ProductEntity().setName("Наливна Бира Витошко Лале голяма").setPrice(5.50).setType(TypeEnum.Beer);
+        ProductEntity birichka = new ProductEntity().setName("Биричка 10' / Birichka Beer 10' 0.33л.").setPrice(4.0).setType(TypeEnum.Beer);
         ProductEntity vitoshaTulip = new ProductEntity().setName("Витошко Лале Светло / Vitosha Tulip 0.50л.").setPrice(5.50).setType(TypeEnum.Beer);
         ProductEntity vitoshaTulipBlonde = new ProductEntity().setName("Витошко Лале БЛОНД 10' / Vitosha Tulip BLOND 10' 0.50л.").setPrice(5.50).setType(TypeEnum.Beer);
         ProductEntity vitoshaTulipWeiss = new ProductEntity().setName("Витошко Лале ВАЙС / Vitosha Tulip Weiss 0.50л.").setPrice(7.00).setType(TypeEnum.Beer);
@@ -206,7 +206,7 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity tipchenitzaRubin = new ProductEntity().setName("Типченица Червено вино Рубин, Сира и Небиоло / Tipchenitza Rubin, Syrah & Nebbiolo Red Wine").setPrice(7.00).setType(TypeEnum.WineGlass);
         ProductEntity tipchenitzaSira = new ProductEntity().setName("Типченица Розе, Рубин, Сира / Tipchenitza Rubin & Syrah Rose").setPrice(7.00).setType(TypeEnum.WineGlass);
         ProductEntity tipchenitzWhite = new ProductEntity().setName("Типченица Бяло Вино Врачански Мискет / Tipchenitza Vrachansky Misket Whnite Wine").setPrice(7.00).setType(TypeEnum.WineGlass);
-        ProductEntity prosecco = new ProductEntity().setName("Prosecco").setPrice(6.00).setType(TypeEnum.WineGlass);
+        ProductEntity prosecco = new ProductEntity().setName("Prosecco").setPrice(7.00).setType(TypeEnum.WineGlass);
 
         productRepository.save(kapatovoBlan);
         productRepository.save(kapatovoRed);
@@ -217,42 +217,36 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void intWineGlass() {
-        ProductEntity sovignonBlan = new ProductEntity().setName("Совиньон Блан Салинас 2019г. 0,75л. Салла Естейт Salla Estate Sallinas Sauvignon Blanc 0,75l.").setPrice(32.00).setType(TypeEnum.WhiteWine);
-        ProductEntity rizlingITraminer = new ProductEntity().setName("Ризлинг и Траминер Салинас 2019г. 0,75л. Салла Естейт / Salla Estate Sallinas Riesling and Traminer 0,751.").setPrice(32.00).setType(TypeEnum.WhiteWine);
-        ProductEntity sovignonReserve = new ProductEntity().setName("Совиньон Блан Резерва Сейнт Клер Марлборо, Нова Зеландия / Saint Clair Sauvignon Blanc Marlborough, New Zealand 0,75I.").setPrice(32.00).setType(TypeEnum.WhiteWine);
-        ProductEntity viognier = new ProductEntity().setName("Капатово Совиньон Блан и Вионие / Kapatovo Souvinon Blanc & Viognier").setPrice(40.00).setType(TypeEnum.WhiteWine);
-        ProductEntity sovignonNewZealand = new ProductEntity().setName("Совиньон Блан Резерва Сейнт Клер Марлборо, Нова Зеландия / Saint Clair Sauvignon Blanc Marlborough, New Zealand 0,75I. ").setPrice(40.00).setType(TypeEnum.WhiteWine);
+    public void initWhiteWine() {
+        ProductEntity tipchenitsaTIRE = new ProductEntity().setName("Типченица TI-RE 0.75л. / Tipchenitsa TI-RE 0.75l.").setPrice(32.00).setType(TypeEnum.WhiteWine);
+        ProductEntity tipchenitsaTOCHKA = new ProductEntity().setName("Типченица TOCH-KA 0.75л. / Tipchenitsa TOCH-KA 0.75l.").setPrice(42.00).setType(TypeEnum.WhiteWine);
+        ProductEntity viognier = new ProductEntity().setName("Капатово Совиньон Блан и Вионие / Kapatovo Souvinon Blanc & Viognier").setPrice(42.00).setType(TypeEnum.WhiteWine);
 
-        productRepository.save(sovignonBlan);
-        productRepository.save(rizlingITraminer);
-        productRepository.save(sovignonReserve);
+        productRepository.save(tipchenitsaTIRE);
+        productRepository.save(tipchenitsaTOCHKA);
         productRepository.save(viognier);
-        productRepository.save(sovignonNewZealand);
     }
 
     @Override
     public void initRedWine() {
-        ProductEntity pinoNoar = new ProductEntity().setName("Пино Ноар Салинас 2019г. 0,75л. Салла Естейт / Salla Estate Sallinas Pinot Noir 0,75l.").setPrice(32.0).setType(TypeEnum.RedWine);
-        ProductEntity salla = new ProductEntity().setName("Салла 2018г. Пино Ноар и Каберне Фран Салла Естейт Salla Red 2018r., Pinot Noir and Cabernet Franc 0,75l.").setPrice(40.00).setType(TypeEnum.RedWine);
-        ProductEntity kapatovoGrenaj = new ProductEntity().setName("Капатово Гренаж, Мурведър и Сира / Kapatovo Grenache, Mourvedre & Shiraz").setPrice(40.00).setType(TypeEnum.RedWine);
-        ProductEntity kapatovoSira = new ProductEntity().setName("Капатово Сира, Пети Вердо и Примитиво / Kapatovo Shiraz, Petit Verdot & Primitivo").setPrice(40.00).setType(TypeEnum.RedWine);
+        ProductEntity tipchenitsaTIRE = new ProductEntity().setName("Типченица TI-RE 0.75л. / Tipchenitsa TI-RE 0.75l.").setPrice(32.0).setType(TypeEnum.RedWine);
+        ProductEntity tipchenitsaTOCHKA = new ProductEntity().setName("Типченица TOCH-KA 0.75л. / Tipchenitsa TOCH-KA 0.75l.").setPrice(42.00).setType(TypeEnum.RedWine);
+        ProductEntity kapatovoGrenaj = new ProductEntity().setName("Капатово Гренаж, Мурведър и Сира / Kapatovo Grenache, Mourvedre & Shiraz").setPrice(42.00).setType(TypeEnum.RedWine);
+        ProductEntity kapatovoSira = new ProductEntity().setName("Капатово Сира, Пети Вердо и Примитиво / Kapatovo Shiraz, Petit Verdot & Primitivo").setPrice(42.00).setType(TypeEnum.RedWine);
 
-        productRepository.save(pinoNoar);
-        productRepository.save(salla);
+        productRepository.save(tipchenitsaTIRE);
+        productRepository.save(tipchenitsaTOCHKA);
         productRepository.save(kapatovoGrenaj);
         productRepository.save(kapatovoSira);
     }
 
     @Override
     public void initRose() {
-        ProductEntity pinoNoir = new ProductEntity().setName("Пино Ноар и Каберне Фран Салинас 2019г. Салла Естейт / Salla Estate Sallinas Rose, Pinot Noir and Cabernet Franc 0,75l.").setPrice(32.00).setType(TypeEnum.Rose);
+        ProductEntity tipchenitsaTOCHKA = new ProductEntity().setName("Типченица TOCH-KA 0.75л. / Tipchenitsa TOCH-KA 0.75l.").setPrice(42.00).setType(TypeEnum.Rose);
         ProductEntity rozeGrenaj = new ProductEntity().setName("Розе от Гренаж и Мурведър, Капатово 0,75л. Kapatovo Rose Grenache Murvedre 0,75l.").setPrice(40.00).setType(TypeEnum.Rose);
-        ProductEntity rozeSavignon = new ProductEntity().setName("Розе от Совиньон Блан Резерва Сейнт Клер, Нова Зеландия / Saint Clair Marlborough Estate Reserve Sauvignon Blanc Rose").setPrice(40.00).setType(TypeEnum.Rose);
 
-        productRepository.save(pinoNoir);
+        productRepository.save(tipchenitsaTOCHKA);
         productRepository.save(rozeGrenaj);
-        productRepository.save(rozeSavignon);
     }
 
     @Override
@@ -264,8 +258,8 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity fresh = new ProductEntity().setName("Fresh Orange 300ml.").setPrice(6.00).setType(TypeEnum.NonAlcoholic);
         ProductEntity klopatar_craft_soda = new ProductEntity().setName("Klopatar Craft Soda").setPrice(4.50).setType(TypeEnum.NonAlcoholic);
         ProductEntity three_cets = new ProductEntity().setName("Three Cents").setPrice(6.0).setType(TypeEnum.NonAlcoholic);
-        ProductEntity lemonade = new ProductEntity().setName("Домашна Лимонада / Homemade Lemonade").setPrice(5.00).setType(TypeEnum.NonAlcoholic);
-        ProductEntity syrup = new ProductEntity().setName("Домашен Сироп / Homemade Syrup").setPrice(5.00).setType(TypeEnum.NonAlcoholic);
+        ProductEntity lemonade = new ProductEntity().setName("Домашна Лимонада / Homemade Lemonade").setPrice(6.00).setType(TypeEnum.NonAlcoholic);
+//        ProductEntity syrup = new ProductEntity().setName("Домашен Сироп / Homemade Syrup").setPrice(5.00).setType(TypeEnum.NonAlcoholic);
 
         productRepository.save(cocaCola);
         productRepository.save(bankaSmall);
@@ -275,7 +269,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(klopatar_craft_soda);
         productRepository.save(three_cets);
         productRepository.save(lemonade);
-        productRepository.save(syrup);
+//        productRepository.save(syrup);
     }
 
     @Override
@@ -314,20 +308,20 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void initMenu() {
-        ProductEntity flamClassic = new ProductEntity().setName("- Класик (Прошуто, Червен Лук и Рукола) / Classic (Prosciutto, Red Onion & Arugula)").setPrice(12.00).setType(TypeEnum.Menu);
-        ProductEntity flamMediterranean = new ProductEntity().setName("- Средиземноморски с Сушени домати, Маслини и Моцарела / Mediterranean with Dried Tomatoes, Olives and Mozzarella").setPrice(13.00).setType(TypeEnum.Menu);
-        ProductEntity flam3Cheese = new ProductEntity().setName("- Три Вида Сирена и Сладко / Three Types of Cheese & Jam").setPrice(14.00).setType(TypeEnum.Menu);
-        ProductEntity flamGoat = new ProductEntity().setName("- Козе Сирене / Goat Cheese").setPrice(14.00).setType(TypeEnum.Menu);
-        ProductEntity flamJackson = new ProductEntity().setName("- Джаксън Поллок, с Шоколад и Ядки Jackson Pollock, with Chocolate and Nuts").setPrice(12.00).setType(TypeEnum.Menu);
-        ProductEntity beefBurger = new ProductEntity().setName("Телешки Бургер / Beef Burger").setPrice(12.00).setType(TypeEnum.Menu);
+        ProductEntity flamClassic = new ProductEntity().setName("- Класик (Прошуто, Червен Лук и Рукола) / Classic (Prosciutto, Red Onion & Arugula)").setPrice(12.50).setType(TypeEnum.Menu);
+        ProductEntity flamMediterranean = new ProductEntity().setName("- Средиземноморски с Сушени домати, Маслини и Моцарела / Mediterranean with Dried Tomatoes, Olives and Mozzarella").setPrice(13.50).setType(TypeEnum.Menu);
+        ProductEntity flam3Cheese = new ProductEntity().setName("- Три Вида Сирена и Сладко / Three Types of Cheese & Jam").setPrice(14.50).setType(TypeEnum.Menu);
+        ProductEntity flamGoat = new ProductEntity().setName("- Козе Сирене / Goat Cheese").setPrice(14.50).setType(TypeEnum.Menu);
+        ProductEntity flamJackson = new ProductEntity().setName("- Джаксън Поллок, с Шоколад и Ядки Jackson Pollock, with Chocolate and Nuts").setPrice(13.50).setType(TypeEnum.Menu);
+        ProductEntity beefBurger = new ProductEntity().setName("Телешки Бургер / Beef Burger").setPrice(12.50).setType(TypeEnum.Menu);
         ProductEntity vegetarianBUrger = new ProductEntity().setName("Вегетариански Бургер / Vegetarian Burger").setPrice(14.00).setType(TypeEnum.Menu);
         ProductEntity nurnberger = new ProductEntity().setName("Нюрнбергски Наденички / Nürnberger Würstel").setPrice(9.00).setType(TypeEnum.Menu);
         ProductEntity kasekrainer = new ProductEntity().setName("Кезе Крайнер — Наденици с Ементал / Käsekrainer").setPrice(9.00).setType(TypeEnum.Menu);
         ProductEntity wienerWurstel = new ProductEntity().setName("Виенски кренвирши с хрян Wiener Würstel with mustard and horseradish").setPrice(7.50).setType(TypeEnum.Menu);
         ProductEntity soupPida = new ProductEntity().setName("Супа на деня с Пида / Soup of the Day with Pida").setPrice(5.50).setType(TypeEnum.Menu);
-        ProductEntity salads = new ProductEntity().setName("Салати / Salads").setPrice(9.00).setType(TypeEnum.Menu);
-        ProductEntity pastaDay = new ProductEntity().setName("Паста на Деня / Pasta of the Day").setPrice(9.00).setType(TypeEnum.Menu);
-        ProductEntity dolceDay = new ProductEntity().setName("Десерт на Деня / Dolce of the Day").setPrice(5.50).setType(TypeEnum.Menu);
+        ProductEntity salads = new ProductEntity().setName("Салати / Salads").setPrice(9.50).setType(TypeEnum.Menu);
+//        ProductEntity pastaDay = new ProductEntity().setName("Паста на Деня / Pasta of the Day").setPrice(9.00).setType(TypeEnum.Menu);
+        ProductEntity dolceDay = new ProductEntity().setName("Десерт на Деня / Dolce of the Day").setPrice(6.00).setType(TypeEnum.Menu);
 
         productRepository.save(flamClassic);
         productRepository.save(flamMediterranean);
@@ -341,7 +335,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(wienerWurstel);
         productRepository.save(soupPida);
         productRepository.save(salads);
-        productRepository.save(pastaDay);
+//        productRepository.save(pastaDay);
         productRepository.save(dolceDay);
     }
 

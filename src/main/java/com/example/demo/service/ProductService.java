@@ -40,7 +40,7 @@ public interface ProductService {
 
     void initWineGlass();
 
-    void intWineGlass();
+    void initWhiteWine();
 
     void initRedWine();
 
