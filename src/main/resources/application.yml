@@ -36,5 +36,6 @@ cloudinary:
 
 schedulers:
   cron: "0 0 09 * * ?"
+  cron2: "0/10 0 0 ? * *"
 
 server.port: ${PORT:8080}
